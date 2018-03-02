@@ -1,17 +1,18 @@
-.dot {
-    margin: 0 10;
-    height: 15px;
-    width: 15px;
+.dot1 {
+    /* margin: 0 10; */
+    height: 20px;
+    width: 20px;
     background-color: rgb(255, 172, 146);
     border-radius: 50%;
-    /* display: inline-block; */
+    display: block;
     /* align-items: left;
     justify-content: left; */
-    position: relative;
-    float: left
+    /* position: relative; */
+    /* float: left */
     
   }
 
   .tag {
       font-size: 12px
   }
+  

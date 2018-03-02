@@ -23,7 +23,7 @@ class MyStash extends React.Component {
 
     render () {
           return (
-            <div>
+            <div className="stash">
             <h1>My Stash</h1>
             
             <div className="outer1">

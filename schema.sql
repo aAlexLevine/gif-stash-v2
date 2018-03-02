@@ -9,3 +9,5 @@ CREATE TABLE storage (
     name varchar(400) NOT NULL,
     PRIMARY KEY (ID)
 );
+
+-- ALTER TABLE storage ADD UNIQUE INDEX(pageid, name);

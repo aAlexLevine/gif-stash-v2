@@ -12,9 +12,11 @@ class MyStashItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            test: []
+            display: false
         }
         console.log('props in mystash item', props)
+        this.hover = this.hover.bind(this)
+        this.out = this.out.bind(this)
     }
 
     removeFromStash( url ) {
@@ -26,22 +28,35 @@ class MyStashItem extends React.Component {
             console.log(error);
           });
     }
-    
-render() {
-    return (
-        <div > 
-        
-            <img src={this.props.item.name} />
-            <br/>
-            <span className="dot" onClick={(e)=>{e.stopPropagation(); 
-                                    this.removeFromStash(this.props.item.name),
-                                    this.props.update(), 
-                                    console.log('red dot clicked')}}></span>
-            
-            <span className="tag" >tags</span>
-        </div>
-        )
-    }
-}
 
-export default MyStashItem;
+    hover(e) {
+        e.stopPropagation()
+        this.setState({display : !this.state.display})
+    }
+
+    out(e) {
+        e.stopPropagation()
+        this.setState({display : !this.state.display})
+    }
+    
+    render() {
+        return (
+            <div onMouseEnter={this.hover} onMouseLeave={this.out}> 
+            
+            <img src={this.props.item.name}/>
+                
+                {this.state.display ? 
+                   <div> <span className="dot1" onClick={(e)=>{e.stopPropagation(); 
+                                        this.removeFromStash(this.props.item.name),
+                                        this.props.update(), 
+                                        console.log('red dot clicked')}}>
+                    </span><span className="tag" >tags</span> </div> : null}
+                    <br/>
+                    
+                
+            </div>
+            )
+        }
+    }
+
+    export default MyStashItem;
