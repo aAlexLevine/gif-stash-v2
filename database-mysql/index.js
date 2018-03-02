@@ -1,15 +1,14 @@
 
-var mysql = require('mysql');
+let mysql = require('mysql');
 
-var connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'FILL_ME_IN',
-  database : 'test'
+  database : 'stash'
 });
 
-var selectAll = function(callback) {
-  connection.query('SELECT * FROM items', function(err, results, fields) {
+let selectAll = function(callback) {
+  connection.query('SELECT * FROM storage', function(err, results, fields) {
     if(err) {
       callback(err, null);
     } else {
@@ -18,4 +17,28 @@ var selectAll = function(callback) {
   });
 };
 
+let save = function(value, callback) {
+  connection.query(`INSERT INTO storage (name) VALUES('${value}')`, function(error, results){
+    if (error) {
+      console.log(error)
+    }
+    callback(results)
+    console.log('new gif saved')
+  })
+}
+
+let remove = function(value, callback) {
+  connection.query(`DELETE FROM storage WHERE NAME = '${value}'`, function(err, result) {
+    if (err) {
+      console.log(error)
+    }
+    callback(results)
+    console.log('number of gifs deleted' + results.affectedRows)
+  })
+}
+
+
+
 module.exports.selectAll = selectAll;
+module.exports.save = save;
+module.exports.remove = remove;

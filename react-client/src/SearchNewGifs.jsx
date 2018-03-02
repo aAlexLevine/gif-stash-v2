@@ -17,21 +17,24 @@ class SearchNewGifs extends React.Component {
         console.log(e.target.value)
     }
 
-    search() {
+    search(e) {
+        e.preventDefault();
         this.props.search(this.state.term)
     }
 
     render() {
         return (
             <div>
+                <form onSubmit={this.search}>
                 <input className="search"
                     onChange={this.onChange}
                     value={this.state.term} />
                     <br/>
                 <button className="button"
-                    onClick={this.search}>
+                    >
                     GET GIFS
                     </button>
+                </form>
             </div>
         )
     }

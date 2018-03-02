@@ -1,10 +1,16 @@
 import React from 'react';
+import './gif.css'
 
 const Gif = (props) => {
     return (
         <div > 
             {/* {props.gif} */}
-            <img src={props.gif.media[0].tinygif.url} />
+            {/* <span className="dot"></span> */}
+            <img    className="circle"  
+                    src={props.gif.media[0].tinygif.url} 
+                    onClick={(e) => {e.stopPropagation(); 
+                    props.addToStash(props.gif.media[0].tinygif.url)}}/>
+                    
         </div>
     )
 }

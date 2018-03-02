@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './app.css'
 import NewGifs from './NewGifs.jsx';
-
+import MyStash from './MyStash.jsx';
 
 class App extends React.Component {
   render () {
@@ -16,6 +16,7 @@ class App extends React.Component {
               Welcome to gif Stash!
             </p>
             <NewGifs />
+            <MyStash />
           </div>
         );
       }

@@ -11,7 +11,8 @@ class NewGifs extends React.Component {
             gifs: [],
         }
     this.search = this.search.bind(this)
-    console.log(this.state.gifs)
+    // console.log(this.state.gifs)
+    this.addToStash = this.addToStash.bind(this)
     }
 
     search( term ) {
@@ -29,18 +30,30 @@ class NewGifs extends React.Component {
           });
     }
 
+    addToStash( url ) {
+        axios.post('/myStash', {
+            url: url
+        }).then((response)=>{
+            console.log('gif sent from client to stash', response.data)
+        }).catch(function (error) {
+            console.log(error);
+          });
+    }
+
     render() {
     return (
         <div>
-        <h1>NEW GIFS BOX</h1>
-        <SearchNewGifs search={this.search}/>
-        
-        <div className="gif-container">
-        {/* {console.log('this state',this.state.gifs)} */}
-        {this.state.gifs.map((gif, i) => (
-            <Gif key={i} gif={gif}/>))}
+            <h1>NEW GIFS BOX</h1>
+            <SearchNewGifs search={this.search}/>
+            <div className="outer">
+                 <div className="gif-container">
+                    {/* {console.log('this state',this.state.gifs)} */}
+                    {this.state.gifs.map((gif, i) => (
+                     <Gif className="module" addToStash={this.addToStash.bind(this)} key={i} gif={gif}/>))}
+                </div>
             </div>
         </div>
+       
         )
     }
 }

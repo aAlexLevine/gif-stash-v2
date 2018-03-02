@@ -1,0 +1,15 @@
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+/* .circle {
+        border-radius: 50%;
+    
+} */

@@ -1,4 +1,4 @@
-.gif-container {
+.gif-container1 {
     display: flex;
     flex-wrap: wrap;
   
@@ -13,12 +13,14 @@
     text-align: center; */
 }
 
-.outer {
-        margin: auto auto;
-        max-width: 56em;
+.outer1 {
+        /* margin: auto auto;
+        max-width: 56em; */
+        height: 200px;
         padding: 1em 0;
+        border-style: inset
 }
-.module {
+.module1 {
     /* Demo-Specific Styles */
     background: #eaeaea;
     display: flex;
