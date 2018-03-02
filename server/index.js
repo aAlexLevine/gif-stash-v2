@@ -33,7 +33,7 @@ app.post('/myStash', function (req, res) {
     let url = req.body.url
     db.save(url, function(err, data) {
         if (err) {
-            console.log(err)
+            console.log('----------SERVER SIDE POST TO DB',err)
             res.sendStatus(500);
         } else {
             res.end('')

@@ -3,8 +3,36 @@ import ReactDOM from 'react-dom';
 import './app.css'
 import NewGifs from './NewGifs.jsx';
 import MyStash from './MyStash.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      myStash: []
+    }
+    this.updateStash = this.updateStash.bind(this)
+  }
+
+
+
+  componentWillMount() {
+    axios.get('/myStash').then((response) => {
+        this.setState({
+            myStash: response.data
+        })
+    })
+}
+
+  updateStash() {
+    axios.get('/myStash').then((response) => {
+      this.setState({
+          myStash: response.data
+      })
+  })
+  }
+
+
   render () {
         return (
           <div className="App">
@@ -15,8 +43,8 @@ class App extends React.Component {
             <p className="App-intro">
               Welcome to gif Stash!
             </p>
-            <NewGifs />
-            <MyStash />
+            <NewGifs updateStash={this.updateStash} />
+            <MyStash myStash={this.state.myStash} />
           </div>
         );
       }

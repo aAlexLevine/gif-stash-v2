@@ -12,7 +12,7 @@ class NewGifs extends React.Component {
         }
     this.search = this.search.bind(this)
     // console.log(this.state.gifs)
-    this.addToStash = this.addToStash.bind(this)
+    //this.addToStash = this.addToStash.bind(this)
     }
 
     search( term ) {
@@ -30,15 +30,15 @@ class NewGifs extends React.Component {
           });
     }
 
-    addToStash( url ) {
-        axios.post('/myStash', {
-            url: url
-        }).then((response)=>{
-            console.log('gif sent from client to stash', response.data)
-        }).catch(function (error) {
-            console.log(error);
-          });
-    }
+    // addToStash( url ) {
+    //     axios.post('/myStash', {
+    //         url: url
+    //     }).then((response)=>{
+    //         console.log('gif sent from client to stash', response.data)
+    //     }).catch(function (error) {
+    //         console.log(error);
+    //       });
+    // }
 
     render() {
     return (
@@ -49,7 +49,7 @@ class NewGifs extends React.Component {
                  <div className="gif-container">
                     {/* {console.log('this state',this.state.gifs)} */}
                     {this.state.gifs.map((gif, i) => (
-                     <Gif className="module" addToStash={this.addToStash.bind(this)} key={i} gif={gif}/>))}
+                     <Gif className="module" key={i} gif={gif} updateStash={this.props.updateStash}/>))}
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ let save = function(value, callback) {
     if (error) {
       console.log(error)
     }
-    callback(results)
+    callback(null, results)
     console.log('new gif saved')
   })
 }
@@ -32,7 +32,7 @@ let remove = function(value, callback) {
     if (err) {
       console.log(error)
     }
-    callback(results)
+    callback(null, results)
     console.log('number of gifs deleted' + results.affectedRows)
   })
 }

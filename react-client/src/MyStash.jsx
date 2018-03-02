@@ -5,20 +5,20 @@ import MyStashItem from './MyStashItem.jsx'
 import './myStash.css'
 
 class MyStash extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            myStash: []
-        }
+    constructor(props) {
+        super(props);
+        // this.state = {
+        //     myStash: []
+        // }
     }
     
-    componentWillMount() {
-        axios.get('/myStash').then((response) => {
-            this.setState({
-                myStash: response.data
-            })
-        })
-    }
+    // componentWillMount() {
+    //     axios.get('/myStash').then((response) => {
+    //         this.setState({
+    //             myStash: response.data
+    //         })
+    //     })
+    // }
 
     render () {
           return (
@@ -28,7 +28,7 @@ class MyStash extends React.Component {
             <div className="outer1">
                  <div className="gif-container1">
                     {/* {console.log('this state',this.state.gifs)} */}
-                    {this.state.myStash.map((item, i) => (
+                    {this.props.myStash.map((item, i) => (
                      <MyStashItem className="module1" key={i} item={item}/>))}
                 </div>
             </div>
