@@ -41,7 +41,7 @@ app.post('/myStash', function (req, res) {
     })
 })
 
-app.delete('/myStash', function (req, res) {
+app.post('/remove', function (req, res) {
     let url = req.body.url
     db.remove(url, function(err, data) {
         if (err) {

@@ -44,7 +44,7 @@ class App extends React.Component {
               Welcome to gif Stash!
             </p>
             <NewGifs updateStash={this.updateStash} />
-            <MyStash myStash={this.state.myStash} />
+            <MyStash myStash={this.state.myStash} updateStash={this.updateStash}/>
           </div>
         );
       }

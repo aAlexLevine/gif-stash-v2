@@ -25,11 +25,12 @@
     align-items: center;
     justify-content: center;
     height: 200px;
+    margin: auto auto;
     
     /* Flex Fallback */
-    margin-left: 5px;
+    /* margin-left: 5px;
     margin-right: 5px;
-    flex: 1 1 200px;
+    flex: 1 1 200px; */
   }
 
 /* If Grid is supported, remove the margin we set for the fallback */

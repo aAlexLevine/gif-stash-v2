@@ -1,0 +1,17 @@
+.dot {
+    margin: 0 10;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(255, 172, 146);
+    border-radius: 50%;
+    /* display: inline-block; */
+    /* align-items: left;
+    justify-content: left; */
+    position: relative;
+    float: left
+    
+  }
+
+  .tag {
+      font-size: 12px
+  }

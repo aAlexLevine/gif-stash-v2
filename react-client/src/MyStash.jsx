@@ -10,6 +10,7 @@ class MyStash extends React.Component {
         // this.state = {
         //     myStash: []
         // }
+        console.log('-----PROPS IN MYSTASH', props)
     }
     
     // componentWillMount() {
@@ -29,7 +30,7 @@ class MyStash extends React.Component {
                  <div className="gif-container1">
                     {/* {console.log('this state',this.state.gifs)} */}
                     {this.props.myStash.map((item, i) => (
-                     <MyStashItem className="module1" key={i} item={item}/>))}
+                     <MyStashItem className="module1" update={this.props.updateStash}  key={i} item={item}/>))}
                 </div>
             </div>
         </div>

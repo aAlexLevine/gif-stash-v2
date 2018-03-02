@@ -14,11 +14,11 @@
 }
 
 .outer1 {
-        /* margin: auto auto;
-        max-width: 56em; */
+        margin: auto auto;
+        max-width: 56em;
         height: 200px;
         padding: 1em 0;
-        border-style: inset
+        /* border-style: inset */
 }
 .module1 {
     /* Demo-Specific Styles */

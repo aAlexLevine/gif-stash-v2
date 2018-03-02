@@ -28,7 +28,8 @@ let save = function(value, callback) {
 }
 
 let remove = function(value, callback) {
-  connection.query(`DELETE FROM storage WHERE NAME = '${value}'`, function(err, result) {
+  console.log('VALUE PARAM ON DB', value)
+  connection.query(`DELETE FROM storage WHERE NAME = '${value}'`, function(err, results) {
     if (err) {
       console.log(error)
     }
