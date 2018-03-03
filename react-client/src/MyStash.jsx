@@ -18,8 +18,9 @@ class MyStash extends React.Component {
     render () {
           return (
             <div className="stash">
-            <h1>My Stash</h1>
-            <input  onChange={this.props.filter}></input>
+            <h2>Stash</h2>
+            <h3>Search the stash by tag</h3>
+            <input  className="myStashSearch" onChange={this.props.filter}></input>
             <div className="outer1">
                  <div className="gif-container1">
                     {console.log('-----PROPS IN MYSTASH', this.props)}

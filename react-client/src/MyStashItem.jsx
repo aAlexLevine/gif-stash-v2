@@ -41,19 +41,24 @@ class MyStashItem extends React.Component {
     
     render() {
         return (
-            <div onMouseEnter={this.hover} onMouseLeave={this.out}> 
+            <div className="na" onMouseEnter={this.hover} onMouseLeave={this.out}> 
             
-            <img src={this.props.item.name}/>
+            <img src={this.props.item.name} className="unit"/>
                 
                 {this.state.display ? 
-                   <div> <span className="dot1" onClick={(e)=>{e.stopPropagation(); 
+
+
+
+
+
+                   <div><span className="ex" onClick={(e)=>{e.stopPropagation(); 
                                         this.removeFromStash(this.props.item.name),
                                         this.props.update(), 
                                         console.log('red dot clicked')}}>
-                    </span><span className="tag" >tags</span> </div> : null}
-                    <br/>
+                                        
+
+                    </span><p>{this.props.item.tag}</p> </div> : null}
                     
-                
             </div>
             )
         }

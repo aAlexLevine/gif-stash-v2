@@ -48,7 +48,7 @@ render() {
     return (
         <div onMouseEnter={this.hover} onMouseLeave={this.out}>  
             
-            <img src={this.props.gif.media[0].tinygif.url}/> 
+            <img src={this.props.gif.media[0].tinygif.url} className="unit1"/> 
                  
                 {this.state.display ? 
                        <div>
@@ -58,19 +58,24 @@ render() {
                                     this.setState({tag: ''})
                                     this.props.spliceGif(this.props.index)
                                     }}>
-                               <input 
+                                    
+                               <input className="inputTag"
                                     onChange={this.onChange}
-                                    value={this.state.tag}> 
+                                    value={this.state.tag}
+                                    type="text" maxLength="20"
+                                    placeholder="add tag">     
                                </input>
+                               <br/>
+                               <button className="sub"> stash </button>
                             </form>
-                           <span className="dot"
+                           {/* <span className="dot"
                                 onClick={(e) => {e.stopPropagation(); 
                                     this.addToStash(this.props.gif.media[0].tinygif.url, this.state.tag, e),
                                     this.props.updateStash()
                                     this.setState({tag: ''})
                                     this.props.spliceGif(this.props.index)
                                     }}> 
-                            </span>
+                            </span> */}
                        </div> : null}
         </div>
         )

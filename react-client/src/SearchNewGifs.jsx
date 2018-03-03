@@ -25,20 +25,25 @@ class SearchNewGifs extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.search}>
-                <input className="search"
-                    onChange={this.onChange}
-                    value={this.state.term}
-                    placeholder="Search new gifs!" />
-                    <br/>
-                <button className="button">
-                    GET GIFS
-                    </button>
+            
+            <div className="flexsearch">
+            
+            <div className="flexsearch--wrapper">
+                <form className="flexsearch--form" action="#" method="post" onSubmit={this.search}>
+                    <div className="flexsearch--input-wrapper">
+                        <input className="flexsearch--input" type="search" placeholder="" onChange={this.onChange}
+                        value={this.state.term}/>
+                    </div>
+                    <input className="flexsearch--submit" type="submit" value="&#10140;"/>
                 </form>
             </div>
+    </div>
         )
     }
 }
 
 export default SearchNewGifs;
+
+{/* <button className="button">
+GET GIFS
+</button> */}

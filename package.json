@@ -22,12 +22,14 @@
     "angular": "^1.6.3",
     "axios": "^0.18.0",
     "body-parser": "^1.17.2",
+    "compass-mixins": "^0.12.10",
     "express": "^4.15.0",
     "jquery": "^3.1.1",
     "mysql": "^2.13.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.83.0",
+    "typeface-poppins": "0.0.54",
     "webpack-css-loaders": "^1.0.0"
   }
 }

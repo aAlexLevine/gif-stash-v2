@@ -36,7 +36,7 @@ class NewGifs extends React.Component {
     render() {
     return (
         <div>
-            <h1>NEW GIFS BOX</h1>
+            <h3>Search for new GIFS!</h3>
             <SearchNewGifs search={this.search}/>
             <div className="outer">
                  <div className="gif-container">

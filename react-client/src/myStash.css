@@ -29,8 +29,8 @@
     /* Demo-Specific Styles */
     background: #eaeaea;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     height: 200px;
     
     /* Flex Fallback */
@@ -39,9 +39,14 @@
     flex: 1 1 200px;
   }
 
-/* If Grid is supported, remove the margin we set for the fallback */
-/* @supports (display: grid) {
-    .module {
-      margin: 0;
-    }
-  } */
+.myStashSearch {
+  border: 2px solid #1beabd;
+  border-radius: 35px;
+  padding: 6px 40px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* .myStashSearch:focus {
+  background-color: bl
+} */

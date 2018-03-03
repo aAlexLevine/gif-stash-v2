@@ -4,6 +4,8 @@ import './app.css'
 import NewGifs from './NewGifs.jsx';
 import MyStash from './MyStash.jsx';
 import axios from 'axios';
+// import 'typeface-poppins';
+
 
 class App extends React.Component {
   constructor() {
@@ -51,9 +53,9 @@ class App extends React.Component {
             <header className="App-header"> 
               <h1 className="App-title">GIF Stash</h1>
             </header>
-            <p className="App-intro">
+            <h1 className="App-intro">
               Welcome to gif Stash!
-            </p>
+            </h1>
             <NewGifs updateStash={this.updateStash} />
             <MyStash myStash={items} updateStash={this.updateStash} filter={this.filter}/>
           </div>
