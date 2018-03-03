@@ -12,9 +12,8 @@ class App extends React.Component {
       myStash: []
     }
     this.updateStash = this.updateStash.bind(this)
+    this.filter = this.filter.bind(this)
   }
-
-
 
   componentWillMount() {
     axios.get('/myStash').then((response) => {
@@ -29,11 +28,23 @@ class App extends React.Component {
       this.setState({
           myStash: response.data
       })
-  })
+    })
+  }
+
+  filter(e) {
+    this.setState({filter: e.target.value})
   }
 
 
   render () {
+    let items = this.state.myStash;
+    if(this.state.filter) {
+      items = items.filter( item =>
+        // console.log('****item', item)
+        item.tag.toLowerCase()
+        .includes(this.state.filter.toLowerCase())
+      )
+    }
         return (
           <div className="App">
             {/* <img className="dog" src="https://media1.tenor.com/images/d0cb62ddace8b8c0aaf4dec51475b856/tenor.gif?itemid=9118700"/> */}
@@ -44,7 +55,7 @@ class App extends React.Component {
               Welcome to gif Stash!
             </p>
             <NewGifs updateStash={this.updateStash} />
-            <MyStash myStash={this.state.myStash} updateStash={this.updateStash}/>
+            <MyStash myStash={items} updateStash={this.updateStash} filter={this.filter}/>
           </div>
         );
       }

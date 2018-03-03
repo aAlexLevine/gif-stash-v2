@@ -17,8 +17,8 @@ let selectAll = function(callback) {
   });
 };
 
-let save = function(value, callback) {
-  connection.query(`INSERT INTO storage (name) VALUES('${value}')`, function(error, results){
+let save = function(obj, callback) {
+  connection.query(`INSERT INTO storage (name, tag) VALUES('${obj.url}', '${obj.tag}')`, function(error, results){
     if (error) {
       console.log(error)
     }

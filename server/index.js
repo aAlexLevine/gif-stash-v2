@@ -30,8 +30,10 @@ app.get('/myStash', function (req, res) {
 })
 
 app.post('/myStash', function (req, res) {
-    let url = req.body.url
-    db.save(url, function(err, data) {
+    // let url = req.body.url
+    // let tag = req.body.tag
+    let obj = req.body
+    db.save(obj, function(err, data) {
         if (err) {
             console.log('----------SERVER SIDE POST TO DB',err)
             res.sendStatus(500);

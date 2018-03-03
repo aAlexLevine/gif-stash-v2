@@ -7,6 +7,7 @@ USE stash;
 CREATE TABLE storage (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(400) NOT NULL,
+    tag varchar(20) DEFAULT "" NOT NULL,
     PRIMARY KEY (ID)
 );
 

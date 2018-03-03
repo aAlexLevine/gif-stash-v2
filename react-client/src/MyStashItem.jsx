@@ -14,7 +14,7 @@ class MyStashItem extends React.Component {
         this.state = {
             display: false
         }
-        console.log('props in mystash item', props)
+        // console.log('props in mystash item', props)
         this.hover = this.hover.bind(this)
         this.out = this.out.bind(this)
     }

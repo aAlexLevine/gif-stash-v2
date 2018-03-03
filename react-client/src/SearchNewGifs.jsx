@@ -20,6 +20,7 @@ class SearchNewGifs extends React.Component {
     search(e) {
         e.preventDefault();
         this.props.search(this.state.term)
+        this.setState({term: ''})
     }
 
     render() {
@@ -28,10 +29,10 @@ class SearchNewGifs extends React.Component {
                 <form onSubmit={this.search}>
                 <input className="search"
                     onChange={this.onChange}
-                    value={this.state.term} />
+                    value={this.state.term}
+                    placeholder="Search new gifs!" />
                     <br/>
-                <button className="button"
-                    >
+                <button className="button">
                     GET GIFS
                     </button>
                 </form>

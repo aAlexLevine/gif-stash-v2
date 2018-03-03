@@ -10,25 +10,19 @@ class MyStash extends React.Component {
         // this.state = {
         //     myStash: []
         // }
-        console.log('-----PROPS IN MYSTASH', props)
+        // console.log('-----PROPS IN MYSTASH', this.props)
     }
     
-    // componentWillMount() {
-    //     axios.get('/myStash').then((response) => {
-    //         this.setState({
-    //             myStash: response.data
-    //         })
-    //     })
-    // }
+
 
     render () {
           return (
             <div className="stash">
             <h1>My Stash</h1>
-            
+            <input  onChange={this.props.filter}></input>
             <div className="outer1">
                  <div className="gif-container1">
-                    {/* {console.log('this state',this.state.gifs)} */}
+                    {console.log('-----PROPS IN MYSTASH', this.props)}
                     {this.props.myStash.map((item, i) => (
                      <MyStashItem className="module1" update={this.props.updateStash}  key={i} item={item}/>))}
                 </div>
