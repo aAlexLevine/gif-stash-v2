@@ -12,7 +12,7 @@ class App extends React.Component {
     super();
     this.state = {
       myStash: [],
-      tags: []
+      // tags: []
     }
     this.updateStash = this.updateStash.bind(this)
     this.filter = this.filter.bind(this)
@@ -22,7 +22,7 @@ class App extends React.Component {
     axios.get('/myStash').then((response) => {
         this.setState({
             myStash: response.data,
-            tags: response.data
+            // tags: response.data
         })
     })
 }
