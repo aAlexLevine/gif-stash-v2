@@ -20,6 +20,8 @@
   padding: 6px 6px;
   font-size: 12px;
   text-align: center;
+  outline: none;
+
   /* border-style: inset */
   /* border-image: linear-gradient(21deg, #10abff, #1beabd); */
   /* border-image-slice: 1; */

@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      myStash: []
+      myStash: [],
+      tags: []
     }
     this.updateStash = this.updateStash.bind(this)
     this.filter = this.filter.bind(this)
@@ -20,7 +21,8 @@ class App extends React.Component {
   componentWillMount() {
     axios.get('/myStash').then((response) => {
         this.setState({
-            myStash: response.data
+            myStash: response.data,
+            tags: response.data
         })
     })
 }
@@ -47,6 +49,19 @@ class App extends React.Component {
         .includes(this.state.filter.toLowerCase())
       )
     }
+
+//     let gifs = this.state.myStash.map(function(gif, i){
+//       return gif.tag 
+//      })
+//          console.log(gifs)
+         
+//          let result = gifs.sort().reduce((init, current) => {
+//      if (init.length === 0 || init[init.length - 1] !== current) {
+//          init.push(current);
+//      }
+//      return init;
+//  }, []);
+
         return (
           <div className="App">
             {/* <img className="dog" src="https://media1.tenor.com/images/d0cb62ddace8b8c0aaf4dec51475b856/tenor.gif?itemid=9118700"/> */}

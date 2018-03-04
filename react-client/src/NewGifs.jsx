@@ -44,7 +44,7 @@ class NewGifs extends React.Component {
                     {this.state.gifs.map((gif, i) => (
                      <Gif className="module" key={i} gif={gif} index={i} spliceGif={this.spliceGif} updateStash={this.props.updateStash}/>))}
                 </div>
-                {console.log('GIF ARRAY IN NEWGIFS------', this.state.gifs)}
+                {/* {console.log('GIF ARRAY IN NEWGIFS------', this.state.gifs)} */}
             </div>
         </div>
        
